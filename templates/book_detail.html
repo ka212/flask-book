@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='book.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center; margin-top: 30px;">Book Details</h2>
+        <table class="book-details-table" border="1px">
+            <tr>
+                <th>Title</th>
+                <td>{{ book.title }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ book.author }}</td>
+            </tr>
+            <tr>
+                <th>Published Date</th>
+                <td>{{ book.published_date }}</td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td>{{ book.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Pages</th>
+                <td>{{ book.pages }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ book.language }}</td>
+            </tr>
+            <tr>
+                <th>Publisher</th>
+                <td>{{ book.publisher }}</td>
+            </tr>
+        </table>
+        <div class="d-flex flex-column align-items-center">
+            <a href="{{ url_for('list') }}" class="btn btn-custom btn-block">Back to List</a>
+            <a href="{{ url_for('home') }}" class="btn btn-custom btn-block">Back to home</a>
+        </div>
+    </div>
+</body>
+</html>

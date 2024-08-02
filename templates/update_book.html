@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='book.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center; margin-top: 12%;">Update Book Details</h2>
+        <form action="{{ url_for('update_book', book_id=book[0]) }}" method="POST">
+            {{ form.hidden_tag() }}
+            <table class="table table-bordered" style="margin-left: 19%; width:60%;">
+                <tr>
+                    <th>Title</th>
+                    <td><input type="text" id="title" name="title" class="form-control" value="{{ book[1] }}"></td>
+                </tr>
+                <tr>
+                    <th>Author</th>
+                    <td><input type="text" id="author" name="author" class="form-control" value="{{ book[2] }}"></td>
+                </tr>
+                <tr>
+                    <th>Published Date</th>
+                    <td><input type="text" id="published_date" name="published_date" class="form-control" value="{{ book[3] }}"></td>
+                </tr>
+                <tr>
+                    <th>ISBN</th>
+                    <td><input type="text" id="isbn" name="isbn" class="form-control" value="{{ book[4] }}"></td>
+                </tr>
+                <tr>
+                    <th>Pages</th>
+                    <td><input type="text" id="pages" name="pages" class="form-control" value="{{ book[5] }}"></td>
+                </tr>
+                <tr>
+                    <th>Language</th>
+                    <td><input type="text" id="language" name="language" class="form-control" value="{{ book[6] }}"></td>
+                </tr>
+                <tr>
+                    <th>Publisher</th>
+                    <td><input type="text" id="publisher" name="publisher" class="form-control" value="{{ book[7] }}"></td>
+                </tr>
+            </table>
+            <div class="d-flex flex-column align-items-center mt-3">
+                <button type="submit" class="btn btn-custom btn-block">Update Book</button>
+                <a href="{{ url_for('list') }}" class="btn btn-custom btn-block">Back to List</a>
+                <a href="{{ url_for('home') }}" class="btn btn-custom btn-block">Back to Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
